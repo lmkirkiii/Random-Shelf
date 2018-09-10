@@ -43,3 +43,10 @@ def treasure_edit(request, pk):
     else:
         form = TreasureForm(instance=treasure)
     return render(request, 'shelf/treasure_form.html', {'form': form})
+
+
+def treasure_delete(request, pk):
+    Treasure.objects.get(id=pk).delete()
+    return redirect('treasure_list')
+
+
