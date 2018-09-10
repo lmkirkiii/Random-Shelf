@@ -16,10 +16,13 @@ Including another URLconf
 from django.conf.urls import include
 from django.contrib import admin
 from shelf import views as shelf_views
+from django.contrib.auth import views as auth_views
 from django.urls import path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/signup/', shelf_views.sign_up, name='signup'),
     path('', include('shelf.urls')),
+    path('accounts/login/', auth_views.login, name='login'),
+    path('accounts/logout/', auth_views.logout, name='logout'),
 ]

@@ -7,4 +7,5 @@ urlpatterns = [
     path('treasures/new', views.treasure_create, name='treasure_create'),
     path('treasures/<int:pk>/edit', views.treasure_edit, name='treasure_edit'),
     path('treasures/<int:pk>/delete', views.treasure_delete, name='treasure_delete'),
+    path('accounts/signup/', views.sign_up, name='signup'),
 ]
