@@ -25,8 +25,8 @@ def treasure_detail(request, pk):
 
 def treasure_create(request):
     if request.method == 'POST':
-        form = TreasureForm(request.POST)
-        if form.is_valid():
+         form = TreasureForm(request.POST, request.FILES)
+         if form.is_valid():
             treasure = form.save()
             return redirect('treasure_detail', pk=treasure.pk)
     else:
